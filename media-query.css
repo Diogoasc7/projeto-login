@@ -1,12 +1,14 @@
 @charset "UTF-8";
 
-@media screen and (min-width: 768px) and (max-width: 992px) {
+@media screen and (min-width: 768px) and (max-width: 992px) { /* CONFIGURAÇÃO PARA TABLET. 
+Quando utilizamos @media screen, direcionamos estilos específicos para dispositivos de tela, e esses estilos não serão aplicados a mídias de impressão ou outras mídias.*/
     body{
         background-image: linear-gradient(to top, #49a09d, #5f2c82);
     } 
 
     section#login{
-        width: 80vw
+        width: 80vw;
+        height: 280px
     }
 
     section#login > div#imagem{
@@ -21,12 +23,13 @@
     }
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 992px) { /* DESCKTOP */
     body{
         background-image: linear-gradient(to top, #49a09d, #5f2c82);
     }
     section#login {
         width: 950px;
+        height: 350px;
     }
 
     section#login > div#imagem {
@@ -36,9 +39,10 @@
     }
 
     section#login > div#formulario {
-        float: left;
-        width: 50%;
+        float: left; /*O elemento com ID "formulario", que é um descendente direto de uma seção com ID "login", será flutuado para a esquerda */
+        width: 50%; /* O elemento ocupará 50% da largura do seu contêiner pai */
     }
+    
 
     div#formulario > h1 {
         font-size: 2em;
@@ -46,5 +50,6 @@
 
     div#formulario > p {
         font-size: 1.2em;
+        margin: 20px 0px
     }
 }

@@ -37,23 +37,25 @@ section#login{
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    overflow: hidden;
+    overflow: hidden; /* oculta qualquer conteúdo que ultrapasse os limites da div */
 
     background-color: white;
     width: 250px;
-    height: 500px;
-    border-radius: 20px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.452);
+    height: 515px;
+    border-radius: 20px; /* Todos os cantos da div terão um raio de arredondamento */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.452); /* SOMBREAMENTO */
 
-    transition: width 0.3s, heigth 0.3s;
-    transition-timing-function: ease;
+    transform: translate(-50%, -50%); /* TRANFORM: Esta regra transforma o elemento em relação a si mesmo. TRANSLATE: move o elemento 50% para cima e 50% para a esquerda, efetivamente centralizando-o em relação ao seu contêiner pai. */
+
+    transition: width 0.3s, heigth 0.3s; /* Esta regra especifica a transição suave para as propriedades width e height do elemento. Quando essas propriedades mudam, a transição será aplicada durante 0.3 segundos, tornando a mudança de tamanho mais suave. */
+
+    transition-timing-function: ease; /* A transição começa devagar, acelera no meio e desacelera novamente no final, criando uma sensação de suavidade. */
 }
 
 section#login > div#imagem {
     display: block;
     background: #5f2c82 url(../imagens/pexels-eosvini-2896034.jpg);
-    background-size: cover;
+    background-size: cover; /* Essa propriedade faz com que a imagem de fundo seja dimensionada de forma que ela cubra todo o elemento, cortando parte da imagem, se necessário, para manter a proporção da imagem e cobrir completamente o elemento. */
     background-repeat: no-repeat;
     background-position: center center;
     height: 200px;
@@ -70,5 +72,82 @@ div#formulario > h1{
 }
 
 div#formulario > p {
+    font-size: 0.8em;
+}
+
+form > div.campo {
+    background-color: #5f2c82;
+    display: block;
+    width: 100%;
+    height: 40px;
+    border-radius: 8px;
+    margin: 5px 0px;
+    border: 2px solid #5f2c82 ;
+}
+
+div.campo > label {
+    display: none;
+}
+
+div.campo > input:focus-within {
+    background-color: white;
+}
+
+div.campo > aside {
+    color: white;
+    font-size: 2em;
+    width: 40px;
+    padding: 5px;
+}
+
+div.campo > input {
+    background-color: #79f0ec;
+    font-size: 1em;
+    width: calc(100% - 44px); /* Em CSS é uma maneira de calcular dinamicamente a largura de um elemento com base em uma expressão matemática. Neste caso específico, a largura do elemento será definida como 100% da largura do seu contêiner pai, menos 44 pixels.
+    Isso é útil quando você deseja que um elemento preencha a largura total do seu contêiner pai, mas também quer subtrair um valor fixo da largura para criar algum espaço ao redor do elemento.*/
+    height: 100%;
+    
+    border: 0px;
+    border-radius: 5px;
+    padding: 4px;
+    transform: translateY(-0px); /* A propriedade transform: translateY em CSS é usada para mover um elemento verticalmente ao longo do eixo Y. Ela desloca o elemento de sua posição original sem alterar o layout da página. SE FOR NEGATIVO MOVE PARA BAXIO , SE FOR POSITIVO, PARA CIMA.*/
+}
+
+form > input[type=submit] { /* Selecionamos todos os elementos de entrada (input) com um atributo de tipo (type) igual a submit, desde que estejam diretamente dentro de um elemento form. */
+    display: block;
+    font-size: 1em;
+    width: 100%;
+    height: 40px;
+    background-color:#49a09d;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer; /* Muda o curso de cetinha para selecionar */
+}
+
+form > input[type=submit]:hover{
+    background-color: #2d6462;
+}
+
+form > a.botao {
+    display: block;
+    text-align: center;
+    font-size: 1em;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    color: #2d6462;
+    border: 1px solid #49a09d;
+    border-radius: 7px;
+    text-decoration: none;
+    padding-top: 5px;
+    margin-top: 5px;
+}
+
+form > a.botao:hover{
+    background-color: #6cd3cf;
+}
+
+form > a.botao > aside {
     font-size: 0.8em;
 }
